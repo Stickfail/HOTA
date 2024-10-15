@@ -91,6 +91,16 @@ var player = {
 
 const tileWidth = 32
 
+
+function keyDown(e){
+    keys[e.key] == true
+    e.preventDefault()
+}
+
+function keyUp(e){
+    keys[e.key] == false
+}
+
 function drawMap(map) {
     ctx.fillStyle = 'black'
     ctx.fillRect(0, 0, canv.width, canv.height)
@@ -126,7 +136,10 @@ function draw() {
 }
 
 function input() {
-
+    switch(player.controlled){
+        case 1:
+            break;
+    }
 }
 
 function update() {
