@@ -97,12 +97,16 @@ function keyDown(e) {
 
     if (e.key == "1") {
         player.controlled = 1
+        alert("player1")
     } else if (e.key == "2") {
         player.controlled = 2
+        alert("player2")
     } else if (e.key == "3") {
         player.controlled = 3
+        alert("player3")
     } else if (e.key == "4") {
         player.controlled = 4
+        alert("player4")
     }
 
     e.preventDefault()
