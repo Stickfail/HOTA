@@ -96,7 +96,7 @@ function drawMap(map) {
         for (j = 0; j < map[i].length; j++) {
             let tile = map[i][j]
             if (tile == 1) {
-                ctx.fillStyle = 'black'
+                ctx.fillStyle = 'dimgrey'
                 ctx.fillRect(j * 32 - player.camera.x, i * 32 - player.camera.y, 32, 32)
             } else if (tile == 0) {
                 ctx.fillStyle = 'green'
