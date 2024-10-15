@@ -4,7 +4,7 @@ canv.width = 1500
 canv.height = 700
 
 const keys = {}
-
+alert("control ver")
 var player = {
     camera: {
         x: 2,
