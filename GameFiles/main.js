@@ -112,17 +112,19 @@ function drawMap(map) {
 }
 
 function draw() {
+    ctx.clearRect(0, 0, canv.width, canv.height); // Clear the canvas
     drawMap(debug)
     //players
     ctx.fillStyle = "blue"
-    ctx.fillRect(player.p1.x*tileWidth,player.p1.y*tileWidth,tileWidth,tileWidth)
+    ctx.fillRect((player.p1.x * tileWidth) - player.camera.x, (player.p1.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
     ctx.fillStyle = "orange"
-    ctx.fillRect(player.p2.x*tileWidth,player.p2.y*tileWidth,tileWidth,tileWidth)
+    ctx.fillRect((player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
     ctx.fillStyle = "red"
-    ctx.fillRect(player.p3.x*tileWidth,player.p3.y*tileWidth,tileWidth,tileWidth)
+    ctx.fillRect((player.p3.x * tileWidth) - player.camera.x, (player.p3.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
     ctx.fillStyle = "purple"
-    ctx.fillRect(player.p4.x*tileWidth,player.p4.y*tileWidth,tileWidth,tileWidth)
+    ctx.fillRect((player.p4.x * tileWidth) - player.camera.x, (player.p4.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
 }
+
 
 function input() {
 
