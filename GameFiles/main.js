@@ -4,7 +4,7 @@ canv.width = 1500
 canv.height = 700
 
 const keys = {}
-alert("control ver1")
+alert("control ver2")
 var player = {
     camera: {
         x: 2,
@@ -108,8 +108,6 @@ function keyDown(e) {
         player.controlled = 4
         alert("player4")
     }
-
-    e.preventDefault()
 }
 
 function keyUp(e) {
