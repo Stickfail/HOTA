@@ -7,8 +7,8 @@ const keys = {}
 
 var player = {
     camera: {
-        x:0,
-        y:0,
+        x:2,
+        y:2,
     },
     p1: {
         x: 2,
@@ -117,14 +117,13 @@ function draw() {
     //players
     ctx.fillStyle = "blue"
     ctx.fillRect((player.p1.x * tileWidth) - player.camera.x, (player.p1.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
-    ctx.fillStyle = "orange"
-    ctx.fillRect((player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
-    ctx.fillStyle = "red"
-    ctx.fillRect((player.p3.x * tileWidth) - player.camera.x, (player.p3.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
     ctx.fillStyle = "purple"
+    ctx.fillRect((player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
+    ctx.fillStyle = "orange"
+    ctx.fillRect((player.p3.x * tileWidth) - player.camera.x, (player.p3.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
+    ctx.fillStyle = "red"
     ctx.fillRect((player.p4.x * tileWidth) - player.camera.x, (player.p4.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
 }
-
 
 function input() {
 
