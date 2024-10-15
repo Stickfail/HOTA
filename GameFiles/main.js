@@ -89,6 +89,8 @@ var player = {
     controlled: 1,
 }
 
+const tileWidth = 32
+
 function drawMap(map) {
     ctx.fillStyle = 'black'
     ctx.fillRect(0, 0, canv.width, canv.height)
@@ -96,7 +98,7 @@ function drawMap(map) {
         for (j = 0; j < map[i].length; j++) {
             let tile = map[i][j]
             if (tile == 1) {
-                ctx.fillStyle = 'dimgrey'
+                ctx.fillStyle = '#003333'
                 ctx.fillRect(j * 32 - player.camera.x, i * 32 - player.camera.y, 32, 32)
             } else if (tile == 0) {
                 ctx.fillStyle = 'green'
@@ -111,6 +113,15 @@ function drawMap(map) {
 
 function draw() {
     drawMap(debug)
+    //players
+    ctx.fillStyle = "blue"
+    ctx.fillRect(player.p1.x,player.p1.y,tileWidth,tileWidth)
+    ctx.fillStyle = "orange"
+    ctx.fillRect(player.p2.x,player.p2.y,tileWidth,tileWidth)
+    ctx.fillStyle = "red"
+    ctx.fillRect(player.p3.x,player.p3.y,tileWidth,tileWidth)
+    ctx.fillStyle = "purple"
+    ctx.fillRect(player.p4.x,player.p4.y,tileWidth,tileWidth)
 }
 
 function input() {
