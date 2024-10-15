@@ -11,8 +11,8 @@ var player = {
         y:0,
     },
     p1: {
-        x: 0,
-        y: 0,
+        x: 2,
+        y: 2,
         id: 1,
         maxhp: 0,
         hp: 0,
@@ -30,8 +30,8 @@ var player = {
     },
 
     p2: {
-        x: 0,
-        y: 0,
+        x: 4,
+        y: 2,
         id: 2,
         maxhp: 0,
         hp: 0,
@@ -49,8 +49,8 @@ var player = {
     },
 
     p3: {
-        x: 0,
-        y: 0,
+        x: 6,
+        y: 2,
         id: 3,
         maxhp: 0,
         hp: 0,
@@ -68,8 +68,8 @@ var player = {
     },
 
     p4: {
-        x: 0,
-        y: 0,
+        x: 8,
+        y: 2,
         id: 4,
         maxhp: 0,
         hp: 0,
@@ -115,13 +115,13 @@ function draw() {
     drawMap(debug)
     //players
     ctx.fillStyle = "blue"
-    ctx.fillRect(player.p1.x,player.p1.y,tileWidth,tileWidth)
+    ctx.fillRect(player.p1.x*tileWidth,player.p1.y*tileWidth,tileWidth,tileWidth)
     ctx.fillStyle = "orange"
-    ctx.fillRect(player.p2.x,player.p2.y,tileWidth,tileWidth)
+    ctx.fillRect(player.p2.x*tileWidth,player.p2.y*tileWidth,tileWidth,tileWidth)
     ctx.fillStyle = "red"
-    ctx.fillRect(player.p3.x,player.p3.y,tileWidth,tileWidth)
+    ctx.fillRect(player.p3.x*tileWidth,player.p3.y*tileWidth,tileWidth,tileWidth)
     ctx.fillStyle = "purple"
-    ctx.fillRect(player.p4.x,player.p4.y,tileWidth,tileWidth)
+    ctx.fillRect(player.p4.x*tileWidth,player.p4.y*tileWidth,tileWidth,tileWidth)
 }
 
 function input() {
