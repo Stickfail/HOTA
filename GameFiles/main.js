@@ -191,12 +191,12 @@ function moveCharacter(playerObj) {
     let dy = 0;
 
     // Horizontal movement
-    if (keys["a"]) dx = -playerObj.spd;
-    if (keys["d"]) dx = playerObj.spd;
+    if (keys["a"] || keys["ArrowLeft"]) dx = -playerObj.spd;
+    if (keys["d"] || keys["ArrowRight"]) dx = playerObj.spd;
 
     // Vertical movement
-    if (keys["w"]) dy = -playerObj.spd;
-    if (keys["s"]) dy = playerObj.spd;
+    if (keys["w"] || keys["ArrowUp"]) dy = -playerObj.spd;
+    if (keys["s"] || keys["ArrowDown"]) dy = playerObj.spd;
 
     // Check for collisions and move if valid
     if (dx !== 0 && checkCollision(playerObj, dx, 0)) {
