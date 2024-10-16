@@ -162,58 +162,53 @@ function checkMapTransition() {
 
 function checkCollision(playerObj, dx, dy) {
     const map = maps[currentMap]; // Get the current active map
-    const futureX = playerObj.x + dx;
+
+    const futureX = playerObj.x + dx; // Calculate future tile position
     const futureY = playerObj.y + dy;
 
-    // Convert future position to tile coordinates (using a small buffer for accuracy)
-    const buffer = 0.05; // Buffer to prevent slipping through small gaps
-    const tileX = Math.floor(futureX + (dx > 0 ? buffer : -buffer)); 
-    const tileY = Math.floor(futureY + (dy > 0 ? buffer : -buffer));
+    const futureTileX = Math.floor(futureX); // Convert to tile coordinates
+    const futureTileY = Math.floor(futureY); // Convert to tile coordinates
 
-    // Make sure we're within the bounds of the map
-    if (tileX >= 0 && tileY >= 0 && tileY < map.length && tileX < map[0].length) {
-        if (map[tileY][tileX] !== 1) {
-            return true; // No collision, it's walkable
+    // Check if the future position is inside the map and not a wall (tile === 1)
+    if (
+        futureTileX >= 0 &&
+        futureTileY >= 0 &&
+        futureTileY < map.length &&
+        futureTileX < map[0].length
+    ) {
+        if (map[futureTileY][futureTileX] != 1 && map[futureTileY+1][futureTileX+1] != 1 ) { // Ensure it's walkable
+            return true; // No collision
         }
     }
-    
     return false; // Collision or out of bounds
 }
 
-function moveCharacter(playerObj) {
-    const speed = playerObj.spd;
-    let dx = keys["a"] ? -speed : keys["d"] ? speed : 0;
-    let dy = keys["w"] ? -speed : keys["s"] ? speed : 0;
 
-    // We will now loop over smaller increments of the movement until reaching the full desired distance
-    const stepSize = 0.05;  // The smaller the step, the more precise but also more expensive (computationally)
-    
-    // Move in x-direction
-    while (Math.abs(dx) > stepSize) {
-        let step = Math.sign(dx) * stepSize;  // Get the direction (positive or negative) of movement
-        if (checkCollision(playerObj, step, 0)) {
-            playerObj.x += step;  // Move in increments of stepSize
-        } else {
-            break;  // Stop moving in x if collision is detected
-        }
-        dx -= step;  // Reduce the remaining movement by the step size
+function moveCharacter(playerObj) {
+    let dx = 0;
+    let dy = 0;
+
+    // Horizontal movement
+    if (keys["a"]) dx = -playerObj.spd;
+    if (keys["d"]) dx = playerObj.spd;
+
+    // Vertical movement
+    if (keys["w"]) dy = -playerObj.spd;
+    if (keys["s"]) dy = playerObj.spd;
+
+    // Check for collisions and move if valid
+    if (dx !== 0 && checkCollision(playerObj, dx, 0)) {
+        playerObj.x += dx;  // Move horizontally if no collision
     }
 
-    // Move in y-direction
-    while (Math.abs(dy) > stepSize) {
-        let step = Math.sign(dy) * stepSize;
-        if (checkCollision(playerObj, 0, step)) {
-            playerObj.y += step;
-        } else {
-            break;  // Stop moving in y if collision is detected
-        }
-        dy -= step;
+    if (dy !== 0 && checkCollision(playerObj, 0, dy)) {
+        playerObj.y += dy;  // Move vertically if no collision
     }
 }
 
 
 function input() {
-    moveCharacter(players[player.controlled - 1]);
+    moveCharacter(players[player.controlled - 1]);  // Get the selected player and move them
 }
 
 function lerp(start, end, t) {
