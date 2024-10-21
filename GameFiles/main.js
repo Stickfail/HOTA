@@ -138,7 +138,7 @@ function drawMap() {
     }
 }
 
-
+alert("current ver")
 function draw() {
     ctx.clearRect(0, 0, canv.width, canv.height);
     drawMap(currentMap)
