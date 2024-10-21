@@ -1,3 +1,11 @@
+//images
+
+const imgs = {
+    "AtreusIdle" : document.createElement("img")
+}
+imgs.AtreusIdle.src = "assets/AtreusIdle.png"
+
+
 const startingCharacters = {
     1:{
         name:"Player"
