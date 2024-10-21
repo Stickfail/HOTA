@@ -3,7 +3,7 @@
 const imgs = {
     "AtreusIdle" : document.createElement("img")
 }
-imgs.AtreusIdle.src = "assets/AtreusIdle(1).png"
+imgs.AtreusIdle.src = "assets/AtreusSheet (1).png"
 
 
 const startingCharacters = {
