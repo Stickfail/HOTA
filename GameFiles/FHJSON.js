@@ -1,9 +1,11 @@
 //images
 
 const imgs = {
-    "AtreusIdle" : document.createElement("img")
+    "Atreus1" : document.createElement("img"),
+    "Atreus2" : document.createElement("img")
 }
-imgs.AtreusIdle.src = "assets/AtreusSheet (1).png"
+imgs.Atreus1.src = "assets/AtreusSheet.png"
+imgs.Atreus2.src = "assets/AtreusSheet (1).png"
 
 
 const startingCharacters = {
