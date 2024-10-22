@@ -151,8 +151,7 @@ function draw() {
     ctx.drawImage(imgs["Atreus2"],(player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y,)
     ctx.fillStyle = "blue"
     ctx.fillRect((player.p1.x * tileWidth) - player.camera.x, (player.p1.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
-    ctx.drawImage(imgs["atreus1"],(player.p1.x * tileWidth) - player.camera.x, (player.p1.y * tileWidth) - player.camera.y)
-}
+    }
 
 function checkMapTransition() {
     // Example condition: if player reaches the right edge of the current map
