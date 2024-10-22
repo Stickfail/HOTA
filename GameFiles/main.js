@@ -147,8 +147,8 @@ function draw() {
     ctx.fillStyle = "orange"
     ctx.fillRect((player.p3.x * tileWidth) - player.camera.x, (player.p3.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
     ctx.fillStyle = "purple"
-    ctx.fillRect((player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
-    ctx.drawImage(imgs["Atreus2"],(player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y,)
+    //ctx.fillRect((player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
+    ctx.drawImage(imgs["Atreus1"],(player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y,)
     ctx.fillStyle = "blue"
     ctx.fillRect((player.p1.x * tileWidth) - player.camera.x, (player.p1.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
     ctx.drawImage(imgs["Atreus1"],(player.p1.x * tileWidth) - player.camera.x, (player.p1.y * tileWidth) - player.camera.y,)
