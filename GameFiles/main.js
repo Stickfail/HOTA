@@ -32,6 +32,8 @@ var player = {
     p2: {
         x: 4,
         y: 2,
+        w:32,
+        h:64,
         id: 2,
         maxhp: 0,
         hp: 0,
@@ -147,11 +149,11 @@ function draw() {
     ctx.fillStyle = "orange"
     ctx.fillRect((player.p3.x * tileWidth) - player.camera.x, (player.p3.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
     ctx.fillStyle = "purple"
-    //ctx.fillRect((player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
+    ctx.fillRect((player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y, player.p2.w,player.p2.h)
     ctx.drawImage(imgs["Atreus2"],(player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y,)
     ctx.fillStyle = "blue"
     ctx.fillRect((player.p1.x * tileWidth) - player.camera.x, (player.p1.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
-    ctx.drawImage(imgs["Atreus2"],(player.p1.x * tileWidth) - player.camera.x, (player.p1.y * tileWidth) - player.camera.y,)
+    ctx.drawImage(imgs["Atreus2"],(player.p1.x * tileWidth) - player.camera.x-20, (player.p1.y * tileWidth) - player.camera.y,)
     }
 
 function checkMapTransition() {
