@@ -150,7 +150,7 @@ function draw() {
     ctx.fillRect((player.p3.x * tileWidth) - player.camera.x, (player.p3.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
     ctx.fillStyle = "purple"
     ctx.fillRect((player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y, player.p2.w,player.p2.h)
-    ctx.drawImage(imgs["Atreus2"],(player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y,)
+    ctx.drawImage(imgs["Atreus2"],(player.p2.x * tileWidth) - player.camera.x-15, (player.p2.y * tileWidth) - player.camera.y,)
     ctx.fillStyle = "blue"
     ctx.fillRect((player.p1.x * tileWidth) - player.camera.x, (player.p1.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
     ctx.drawImage(imgs["Atreus2"],(player.p1.x * tileWidth) - player.camera.x-20, (player.p1.y * tileWidth) - player.camera.y,)
@@ -180,7 +180,7 @@ function checkCollision(playerObj, dx, dy) {
         futureTileY < map.length &&
         futureTileX < map[0].length
     ) {
-        if (map[futureTileY][futureTileX] != 1 &&map[futureTileY+1][futureTileX] != 1 && map[futureTileY+1][futureTileX+1] != 1 ) { // Ensure it's walkable
+        if (map[futureTileY][futureTileX] != 1 &&map[futureTileY+2][futureTileX] != 1 && map[futureTileY+1][futureTileX+1] != 1 ) { // Ensure it's walkable
             return true; // No collision
         }
     }
