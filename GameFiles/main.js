@@ -152,8 +152,8 @@ function draw() {
     ctx.fillRect((player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y, player.p2.w,player.p2.h)
     ctx.drawImage(imgs["Atreus2"],(player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y,)
     ctx.fillStyle = "blue"
-    ctx.fillRect((player.p1.x * tileWidth) - player.camera.x-18, (player.p1.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
-    ctx.drawImage(imgs["Atreus2"],(player.p1.x * tileWidth) - player.camera.x-15, (player.p1.y * tileWidth) - player.camera.y,)
+    ctx.fillRect((player.p1.x * tileWidth) - player.camera.x-25, (player.p1.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
+    ctx.drawImage(imgs["Atreus2"],(player.p1.x * tileWidth) - player.camera.x-20, (player.p1.y * tileWidth) - player.camera.y,)
     }
 
 function checkMapTransition() {
