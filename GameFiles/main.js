@@ -13,6 +13,8 @@ var player = {
     p1: {
         x: 2,
         y: 2,
+        w:32,
+        h:64,
         id: 1,
         maxhp: 0,
         hp: 0,
@@ -53,6 +55,8 @@ var player = {
     p3: {
         x: 6,
         y: 2,
+        w:32,
+        h:64,
         id: 3,
         maxhp: 0,
         hp: 0,
@@ -62,7 +66,7 @@ var player = {
         exp: 0,
         atkpower: 0,
         def: 0,
-        spd: 0.4,
+        spd: 0.2,
         class: 0,
         skills: [],
         effects: [],
@@ -72,6 +76,8 @@ var player = {
     p4: {
         x: 8,
         y: 2,
+        w:32,
+        h:64,
         id: 4,
         maxhp: 0,
         hp: 0,
@@ -81,7 +87,7 @@ var player = {
         exp: 0,
         atkpower: 0,
         def: 0,
-        spd: 1,
+        spd: 0.3,
         class: 0,
         skills: [],
         effects: [],
@@ -145,15 +151,15 @@ function draw() {
     drawMap(currentMap)
     //players
     ctx.fillStyle = "red"
-    ctx.fillRect((player.p4.x * tileWidth) - player.camera.x, (player.p4.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
+    ctx.fillRect((player.p4.x * tileWidth) - player.camera.x, (player.p4.y * tileWidth) - player.camera.y, player.p4.w,player.p4.h)
     ctx.fillStyle = "orange"
-    ctx.fillRect((player.p3.x * tileWidth) - player.camera.x, (player.p3.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
+    ctx.fillRect((player.p3.x * tileWidth) - player.camera.x, (player.p3.y * tileWidth) - player.camera.y, player.p3.w,player.p3.h)
     ctx.fillStyle = "purple"
     ctx.fillRect((player.p2.x * tileWidth) - player.camera.x, (player.p2.y * tileWidth) - player.camera.y, player.p2.w,player.p2.h)
     ctx.drawImage(imgs["Atreus2"],(player.p2.x * tileWidth) - player.camera.x-15, (player.p2.y * tileWidth) - player.camera.y,)
     ctx.fillStyle = "blue"
-    ctx.fillRect((player.p1.x * tileWidth) - player.camera.x, (player.p1.y * tileWidth) - player.camera.y, tileWidth, tileWidth)
-    ctx.drawImage(imgs["Atreus2"],(player.p1.x * tileWidth) - player.camera.x-20, (player.p1.y * tileWidth) - player.camera.y,)
+    ctx.fillRect((player.p1.x * tileWidth) - player.camera.x, (player.p1.y * tileWidth) - player.camera.y, player.p1.w,player.p1.h)
+    ctx.drawImage(imgs["Atreus2"],(player.p1.x * tileWidth) - player.camera.x-15, (player.p1.y * tileWidth) - player.camera.y,)
     }
 
 function checkMapTransition() {
